@@ -1,7 +1,3 @@
-# Update
-
-This repo in migrated to https://github.com/MSRA-COLT-Group/Differentially-Private-Deep-Learning. All updates will only be pushed to the new repo.
-
 # Differentially-Private-Deep-Learning
 
 This repo will use Pytorch to implement several algorithms for learning with differential privacy including DP-SGD \[1\], GEP \[2\], and RGP \[3\].
