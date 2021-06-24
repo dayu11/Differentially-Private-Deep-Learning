@@ -16,6 +16,7 @@ torch>=1.3
 torchvision>=0.4
 scipy
 six
+backpack-for-pytorch
 ```
 # Example commands
 
