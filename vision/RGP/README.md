@@ -1,6 +1,6 @@
 # Implementation of Reparametrized Gradient Perturbation (RGP)
 
-See our paper "Large Scale Private Learning via Low-rank Reparametrization" in ICML 2021 for more details.
+This code implements the RGP algorithm in "Large Scale Private Learning via Low-rank Reparametrization". https://arxiv.org/abs/2106.09352
 
 
 # Environment
