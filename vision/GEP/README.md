@@ -1,6 +1,6 @@
 # Implementation of Gradient Embeding Perturbation (GEP)
 
-See our paper "Do not Let Privacy Overbill Utility: Gradient Embedding Perturbation for Private Learning" in ICLR 2021 for more details.
+This code implements the GEP algorithm in "Do not Let Privacy Overbill Utility: Gradient Embedding Perturbation for Private Learning".
 https://openreview.net/forum?id=7aogOj_VYO0
 
 # Environment
@@ -18,7 +18,6 @@ To run the source code, please first install the following packages:
 
 # Example commands
 
-Private learning with GEP:
 This code supports CIFAR10 and extended SVHN datasets. The following command trains a ResNet20 model with GEP using a 1000-dimensional anchor subspace and 2000 auxiliary samples from ImageNet.
 
     CUDA_VISIBLE_DEVICES=0 python main.py  --private --rgp --clip0 5 --clip1 2 --num_bases 1000 --aux_dataset imagenet --aux_data_size 2000 --sess cifar10_GEP_default
