@@ -16,7 +16,15 @@ torchvision>=0.4
 scipy
 six
 ```
-# Example commands
+
+# Some Implementation Details
+
+The implementation of low-rank convolutional module can be found in models/resnet_cifar.py (the LrkConv2d class). During each forward, we use power iteration to get low-rank gradient carriers and residual weight. During backward, we only compute the individual gradients of the gradient carriers.
+
+We note that we do not reparametrize the classification layer because it is already low-rank. We scale down the gradient of the classification layer so that it has approximatly the same norm as low-rank gradients. The scaling factor is the same for all settings.
+
+
+# Example Commands
 
 An example command that trains a WRN28-10 model with (8, 1e-5)-DP:
 
