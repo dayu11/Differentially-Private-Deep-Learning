@@ -24,15 +24,15 @@ From my experience, installing apex using anaconda is a convenience appraoch. ht
 
 The major modifcations are made in the following files:
 ```
-fairseq/models/roberta/model.py
-fairseq/modules/multihead_attention.py
-fairseq/modules/transformer_sentence_encoder_layer.py
-fariseq/lrk_utils.py
-fariseq/trainer.py
+bert_code/fairseq/models/roberta/model.py
+bert_code/fairseq/modules/multihead_attention.py
+bert_code/fairseq/modules/transformer_sentence_encoder_layer.py
+bert_code/fariseq/lrk_utils.py
+bert_code/fariseq/trainer.py
 ```
 The reparametrized forward process is implemented in 'multihead_attention.py' and 'transformer_sentence_encoder_layer.py'. Codes for computing individual gradients and running power iterations are in 'lrk_utils.py'. The codes for collecting and processing individual gradients are in 'trainer.py'.
 
-I provide a 'run_exp.py' file to help you run experiments in a easier way. You can adjust most of the hyperparameters in that file.
+I provide a 'bert_code/run_exp.py' file to help you run experiments in a easier way. You can adjust most of the hyperparameters in that file.
 
 
 
@@ -43,7 +43,7 @@ A pre-trained model is available at: https://drive.google.com/file/d/1xK4JaldIpO
 
 Here is an example command to fine-tune the model on SST-2 dataset:
 ```
-python run_exp.py --eps 8 --batch_size 1000 --epoch 50 --gpu_id 0 --seed 0  --lr 3e-4 --eps 8 --delta 1e-5 --clip 10 --rank 1 --epoch 50 --sess debug_sst2 --to_console
+python run_exp.py --ckpt_dir path_to_checkpoint --batch_size 1000 --epoch 50 --gpu_id 0 --seed 0  --lr 3e-4 --eps 8 --delta 1e-5 --clip 10 --rank 1 --epoch 50 --sess debug_sst2 --to_console
 ```
 
 You can also try other tasks such as MNLI, QNLI, QQP.
