@@ -1,0 +1,20 @@
+ninja_required_version = 1.3
+cxx = c++
+
+cflags = -pthread -B /opt/conda/envs/pytorch-py3.6/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -Ifastbpe/fastBPE -I/opt/conda/envs/pytorch-py3.6/include/python3.6m -c
+post_cflags = -std=c++17 -Ofast -pthread -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=fastBPE -D_GLIBCXX_USE_CXX11_ABI=0
+ldflags = 
+
+rule compile
+  command = $cxx -MMD -MF $out.d $cflags -c $in -o $out $post_cflags
+  depfile = $out.d
+  deps = gcc
+
+
+
+build /mnt/batch/tasks/shared/LS_root/jobs/ussclowpriv100ws/azureml/pt-6395772d-d4ce1515_1593483771_17cd8f59/mounts/ptead766bed08a358fe3b705678c746771/bert_code/build/temp.linux-x86_64-3.6/fastbpe/fastBPE/fastBPE.o: compile /mnt/batch/tasks/shared/LS_root/jobs/ussclowpriv100ws/azureml/pt-6395772d-d4ce1515_1593483771_17cd8f59/mounts/ptead766bed08a358fe3b705678c746771/bert_code/fastbpe/fastBPE/fastBPE.cpp
+
+
+
+
+

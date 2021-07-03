@@ -1,0 +1,7 @@
+# ninja log v5
+907	3606	1593484475	/mnt/batch/tasks/shared/LS_root/jobs/ussclowpriv100ws/azureml/pt-6395772d-d4ce1515_1593483771_17cd8f59/mounts/ptead766bed08a358fe3b705678c746771/bert_code/build/temp.linux-x86_64-3.6/fairseq/clib/libbleu/module.o	f3058f29bc09181e
+906	3893	1593484475	/mnt/batch/tasks/shared/LS_root/jobs/ussclowpriv100ws/azureml/pt-6395772d-d4ce1515_1593483771_17cd8f59/mounts/ptead766bed08a358fe3b705678c746771/bert_code/build/temp.linux-x86_64-3.6/fairseq/clib/libbleu/libbleu.o	9608f5c5f9b4c239
+114	5853	1593484489	/mnt/batch/tasks/shared/LS_root/jobs/ussclowpriv100ws/azureml/pt-6395772d-d4ce1515_1593483771_17cd8f59/mounts/ptead766bed08a358fe3b705678c746771/bert_code/build/temp.linux-x86_64-3.6/fairseq/data/data_utils_fast.o	bfaad337a8911598
+104	6565	1593484503	/mnt/batch/tasks/shared/LS_root/jobs/ussclowpriv100ws/azureml/pt-6395772d-d4ce1515_1593483771_17cd8f59/mounts/ptead766bed08a358fe3b705678c746771/bert_code/build/temp.linux-x86_64-3.6/fairseq/data/token_block_utils_fast.o	2db4383affbf12ed
+241	15339	1593484522	/mnt/batch/tasks/shared/LS_root/jobs/ussclowpriv100ws/azureml/pt-6395772d-d4ce1515_1593483771_17cd8f59/mounts/ptead766bed08a358fe3b705678c746771/bert_code/build/temp.linux-x86_64-3.6/fairseq/clib/libnat/edit_dist.o	9dd80578cf7d41b8
+101	45448	1593484573	/mnt/batch/tasks/shared/LS_root/jobs/ussclowpriv100ws/azureml/pt-6395772d-d4ce1515_1593483771_17cd8f59/mounts/ptead766bed08a358fe3b705678c746771/bert_code/build/temp.linux-x86_64-3.6/fastbpe/fastBPE/fastBPE.o	8fc463c6317b596
