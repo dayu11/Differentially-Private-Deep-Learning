@@ -31,7 +31,7 @@ bert_code/fariseq/trainer.py
 ```
 The reparametrized forward process is implemented in 'multihead_attention.py' and 'transformer_sentence_encoder_layer.py'. Codes for computing individual gradients and running power iterations are in 'lrk_utils.py'. The codes for collecting and processing individual gradients are in 'trainer.py'.
 
-I provide a 'bert_code/run_exp.py' file to help you run experiments in a easier way. You can adjust most of the hyperparameters in that file.
+I provide a 'bert_code/run_exp.py' file to help you run experiments in an easier way. You can adjust most of the hyperparameters in that file.
 
 
 
