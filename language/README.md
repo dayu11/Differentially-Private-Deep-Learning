@@ -16,7 +16,7 @@ six
 apex
 ```
 
-From my experience, installing apex using anaconda is a convenience appraoch. https://anaconda.org/conda-forge/nvidia-apex
+From my experience, installing apex via anaconda is a convenience appraoch. https://anaconda.org/conda-forge/nvidia-apex
 
 
 # Some Implementation Details
