@@ -38,7 +38,7 @@ I provide a 'bert_code/run_exp.py' file to help you run experiments in an easier
 
 # Example Commands
 
-A pre-trained model is available at: https://drive.google.com/file/d/1xK4JaldIpOBmSaTmiCQVi9ef0D7YL0E2/view?usp=sharing. This model is pre-trained for 100k updates on the public data in https://github.com/google-research/bert. You can also load the parameters your own pre-trained model.
+A pre-trained model is available at: https://drive.google.com/file/d/1xK4JaldIpOBmSaTmiCQVi9ef0D7YL0E2/view?usp=sharing. This model is pre-trained for 100k updates on the public data in https://github.com/google-research/bert. You can also load the parameters of your own pre-trained model.
 
 Here is an example command to fine-tune the model on SST-2 dataset:
 ```
