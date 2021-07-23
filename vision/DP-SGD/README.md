@@ -22,5 +22,5 @@ backpack-for-pytorch
 
 An example command that trains a ResNet20 model on the CIFAR-10 dataset:
 
-    CUDA_VISIBLE_DEVICES=0 python main.py  --eps 8 --delta 1e-5
+    CUDA_VISIBLE_DEVICES=0 python main.py  --eps 8 --delta 1e-5 --private
 
