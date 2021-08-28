@@ -1,0 +1,8 @@
+Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, amp=False, amp_batch_retries=2, amp_init_scale=128, amp_scale_window=None, azureml_logging=False, bf16=False, bpe=None, cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='QQP-bin/input1', dict_only=False, empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_file=None, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, on_cpu_convert_precision=False, only_source=True, optimizer=None, padding_factor=8, plasma_path='/tmp/plasma', profile=False, quantization_config_path=None, reset_logging=False, scoring='bleu', seed=1, simul_type=None, source_lang=None, srcdict='dict.txt', suppress_crashes=False, target_lang=None, task='translation', tensorboard_logdir=None, testpref='glue_data//QQP/processed/test.input1', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='glue_data//QQP/processed/train.input1', use_plasma_view=False, user_dir=None, validpref='glue_data//QQP/processed/dev.input1', wandb_project=None, workers=60)
+[None] Dictionary: 50264 types
+[None] glue_data//QQP/processed/train.input1: 363846 sents, 5322779 tokens, 0.0% replaced by <unk>
+[None] Dictionary: 50264 types
+[None] glue_data//QQP/processed/dev.input1: 40430 sents, 591062 tokens, 0.0% replaced by <unk>
+[None] Dictionary: 50264 types
+[None] glue_data//QQP/processed/test.input1: 390965 sents, 5797051 tokens, 0.0% replaced by <unk>
+Wrote preprocessed data to QQP-bin/input1
