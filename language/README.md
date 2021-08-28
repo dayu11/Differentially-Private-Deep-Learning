@@ -18,6 +18,11 @@ apex
 
 From my experience, installing apex via anaconda is a convenience appraoch. https://anaconda.org/conda-forge/nvidia-apex
 
+Then go to the `bert_code` folder and install fairseq by running:
+
+```
+pip install --editable .
+```
 
 # Some Implementation Details
 
@@ -41,7 +46,7 @@ I provide a 'bert_code/run_exp.py' file to help you run experiments in an easier
 
 Official pre-trained checkpoints are available at: https://github.com/pytorch/fairseq/tree/master/examples/roberta. 
 
-I pre-process the GLUE data following the instructions at https://github.com/pytorch/fairseq/blob/master/examples/roberta/README.glue.md. The processed data are in the 'glue_data' folder. 
+I pre-process the GLUE data following the instructions at https://github.com/pytorch/fairseq/blob/master/examples/roberta/README.glue.md. The processed data are in the `glue_data` folder. 
 
 
 Here is an example command to fine-tune the model on SST-2 dataset:
