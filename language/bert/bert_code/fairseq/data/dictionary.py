@@ -33,9 +33,9 @@ class Dictionary(object):
         self.pad_index = self.add_symbol(pad)
         self.eos_index = self.add_symbol(eos)
         self.unk_index = self.add_symbol(unk)
-        self.add_symbol('<file>')
-        self.add_symbol('<email>')
-        self.add_symbol('<url>')
+        # self.add_symbol('<file>')
+        # self.add_symbol('<email>')
+        # self.add_symbol('<url>')
         if extra_special_symbols:
             print('Add extra symbols {} into dictionary, start_idx: {}'.format(extra_special_symbols, self.unk_index + 1))
             for s in extra_special_symbols:

@@ -6,7 +6,7 @@ parser = argparse.ArgumentParser(description='differentially private BERT finetu
 
 parser.add_argument('--task', default='SST-2', type=str, help='task name, choices: [MNLI, QNLI, QQP, SST-2]')
 parser.add_argument('--gpu_id', default=0, type=int, help='GPU id')
-parser.add_argument('--ckpt_dir', type=str, default='../checkpoints/checkpoint_best.pt', help='full checkpoint path')
+parser.add_argument('--ckpt_dir', type=str, default='~/roberta.base/model.pt', help='path to checkpoint')
 parser.add_argument('--output_dir', default='log_dir', type=str, help='output path')
 parser.add_argument('--data_dir', type=str, default='../glue_data', help='data path prefix')
 parser.add_argument('--to_console', action='store_true', help='output to console')
@@ -34,7 +34,7 @@ args = parser.parse_args()
 assert args.task in ['MNLI', 'QNLI', 'QQP', 'SST-2', 'CoLA', 'STS-B', 'MRPC', 'RTE']
 
 
-args.data_dir += '/%s-bin-32768'%args.task
+args.data_dir += '/%s-bin'%args.task
 
 metric='accuracy'
 n_classes=2
