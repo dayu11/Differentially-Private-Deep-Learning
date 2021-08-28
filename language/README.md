@@ -38,14 +38,16 @@ I provide a 'bert_code/run_exp.py' file to help you run experiments in an easier
 
 # Example Commands
 
-A pre-trained model is available at: https://drive.google.com/file/d/1xK4JaldIpOBmSaTmiCQVi9ef0D7YL0E2/view?usp=sharing. This model is pre-trained for 100k updates on the public data in https://github.com/google-research/bert. You can also load the parameters of your own pre-trained model.
+
+Official pre-trained checkpoints are available at: https://github.com/pytorch/fairseq/tree/master/examples/roberta. I pre-process the GLUE data following the instructions at https://github.com/pytorch/fairseq/blob/master/examples/roberta/README.glue.md. The processed data are in glue_data. 
+
 
 Here is an example command to fine-tune the model on SST-2 dataset:
 ```
 python run_exp.py --ckpt_dir path_to_checkpoint --batch_size 1000 --epoch 50 --gpu_id 0 --seed 0  --lr 3e-4 --eps 8 --delta 1e-5 --clip 10 --rank 1 --epoch 50 --sess debug_sst2 --to_console
 ```
 
-You can also try other tasks such as MNLI, QNLI, QQP.
+You can also try other tasks such as MNLI, QNLI, and QQP. 
 
 
 
