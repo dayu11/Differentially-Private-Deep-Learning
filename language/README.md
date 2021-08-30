@@ -58,7 +58,7 @@ You can also try other tasks such as MNLI, QNLI, and QQP.
 
 # Results on MNLI, QNLI, QQP, and SST-2
 
-The privacy bound is <img src="https://render.githubusercontent.com/render/math?math=(8 , 1e^{-5})">-differential privacy. We run experiments with both `roberta.base` and `roberta.large` models. For all of the four tasks, the hyperparameters are the same as those in the example command.  The results (test accuracy in %) are in the table below.
+The privacy bound is <img src="https://render.githubusercontent.com/render/math?math=(8 , 1e^{-5})">-differential privacy. We run experiments with both `roberta.base` and `roberta.large` models. For all of the four tasks, the hyperparameters are **the same as** those in the example command.  The results (test accuracy in %) are in the table below.
 
 | Model    | 	MNLI | QNLI | QQP | SST-2 |    Average |                                                                                         
 | -----------    |-----------    |  -----------  | ----------- | ----------- |----------- |
