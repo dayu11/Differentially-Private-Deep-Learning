@@ -44,17 +44,27 @@ I provide a 'bert_code/run_exp.py' file to help you run experiments in an easier
 # Example Commands
 
 
-Official pre-trained checkpoints are available at: https://github.com/pytorch/fairseq/tree/master/examples/roberta. 
+Official pre-trained checkpoints of RoBERTa are available at: https://github.com/pytorch/fairseq/tree/master/examples/roberta. 
 
 I pre-process the GLUE data following the instructions at https://github.com/pytorch/fairseq/blob/master/examples/roberta/README.glue.md. The processed data are in the `glue_data` folder. 
 
 
 Here is an example command to fine-tune the model on SST-2 dataset:
 ```
-python run_exp.py --ckpt_dir path_to_checkpoint --batch_size 1000 --epoch 50 --gpu_id 0 --seed 0  --lr 3e-4 --eps 8 --delta 1e-5 --clip 10 --rank 1 --epoch 50 --sess debug_sst2 --to_console
+python run_exp.py --ckpt_dir path_to_checkpoint --batch_size 2000 --epoch 50 --gpu_id 0 --seed 0  --lr 3e-4 --eps 8 --delta 1e-5 --clip 10 --rank 1 --epoch 50 --sess debug_sst2 --to_console
 ```
 
 You can also try other tasks such as MNLI, QNLI, and QQP. 
+
+# Results on MNLI, QNLI, QQP, and SST-2
+
+The privacy bound is <img src="https://render.githubusercontent.com/render/math?math=(8 , 1e^{-5})">-differential privacy. We run experiments with both `roberta.base` and `roberta.large` models. For all of the four tasks, the hyperparameters are the same as those in the example command.  The results (test accuracy in %) are in the table below.
+
+| Model    | 	MNLI | QNLI | QQP | SST-2 |    Average |                                                                                         
+| -----------    |-----------    |  -----------  | ----------- | ----------- |----------- |
+| roberta.base   | 	80.5/79.6	|   87.2  | 85.5 |    91.6  |   84.88 |
+| roberta.large   | 86.1/86.0		|    90.0     |  86.7    | 93.0 |  88.36   |
+
 
 
 
