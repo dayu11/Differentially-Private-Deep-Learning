@@ -1,5 +1,11 @@
 # Differentially-Private-Deep-Learning
 
+## Update 09/01/2021
+
+Our code for fine-tuning BERT models with differential privacy now supports loading official RoBERTa checkpoints.
+
+## Readme
+
 This repo provides some example code to help you get started with differentially private deep learning. 
 
 Our implementation uses **Pytorch**. We cover several algorithms including *Differentially Private SGD* [[1]](https://arxiv.org/abs/1607.00133), *Gradient Embedding Perturbation* [[2]](https://openreview.net/forum?id=7aogOj_VYO0), and *Reparametrized Gradient Perturbation* [[3]](https://arxiv.org/abs/2106.09352).
