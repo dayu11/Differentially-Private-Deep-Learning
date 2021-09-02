@@ -10,9 +10,9 @@ This repo provides some example code to help you get started with differentially
 
 Our implementation uses **Pytorch**. We cover several algorithms including *Differentially Private SGD* [[1]](https://arxiv.org/abs/1607.00133), *Gradient Embedding Perturbation* [[2]](https://openreview.net/forum?id=7aogOj_VYO0), and *Reparametrized Gradient Perturbation* [[3]](https://arxiv.org/abs/2106.09352).
 
-In the *vision* folder, we train deep ResNets from scratch on benchmark vision datasets such as the CIFAR-10 dataset. 
+In the *vision* folder, we implement the algorithms in [1,2,3] to train deep ResNets on benchmark vision datasets.
 
-In the *language* folder, we fine-tune BERT models on four tasks from the [GLUE](https://gluebenchmark.com/) benchrmark.
+In the *language* folder, we implement the algorithm in [3] to fine-tune BERT models on four tasks from the [GLUE](https://gluebenchmark.com/) benchrmark.
 
 
 ## References
