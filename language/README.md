@@ -51,7 +51,7 @@ I pre-process the GLUE data following the instructions at https://github.com/pyt
 
 Here is an example command to fine-tune the model on SST-2 dataset:
 ```
-python run_exp.py --ckpt_dir path_to_checkpoint --batch_size 2000 --epoch 50 --gpu_id 0 --seed 0  --lr 3e-4 --eps 8 --delta 1e-5 --clip 10 --rank 1 --epoch 50 --sess debug_sst2 --to_console
+python run_exp.py --ckpt_dir path_to_checkpoint --batch_size 2000 --gpu_id 0 --seed 0  --lr 3e-4 --eps 8 --delta 1e-5 --clip 10 --rank 1 --epoch 50 --sess debug_sst2 --to_console
 ```
 
 You can also try other tasks such as MNLI, QNLI, and QQP. 
