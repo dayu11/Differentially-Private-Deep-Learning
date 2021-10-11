@@ -157,7 +157,7 @@ def train(epoch):
             loss = loss_func(outputs, targets)
             with backpack(BatchGrad()):
                 loss.backward()
-                process_grad_batch(list(net.parameters())) # clip gradients and sum clipped gradients
+                process_grad_batch(list(net.parameters()), args.clip) # clip gradients and sum clipped gradients
                 ## add noise to gradient
                 for p in net.parameters():
                     shape = p.grad.shape
