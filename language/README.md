@@ -14,9 +14,15 @@ torch>=1.8
 scipy
 six
 apex
+prv_accountant
 ```
 
 From my experience, installing apex via anaconda is a convenience appraoch. https://anaconda.org/conda-forge/nvidia-apex
+
+To install prv_accountant, go to the 'prv_accountant' folder and run 
+```
+pip install --editable .
+```
 
 Then go to the `bert_code` folder and install fairseq by running:
 
