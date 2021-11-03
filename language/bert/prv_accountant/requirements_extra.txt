@@ -1,0 +1,7 @@
+plotly
+tqdm
+jupyter
+sympy
+nbconvert
+pandas
+pytest

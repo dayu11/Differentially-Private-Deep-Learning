@@ -1,0 +1,73 @@
+#!/usr/bin/env python3
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+
+import sys
+import argparse
+
+from prv_accountant import Accountant, other_accountants
+
+
+def arg_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description="Compute DP epsilon for a set of training hyper-params")
+    parser.add_argument(
+        "-p", "--sampling-probability", type=float, required=True,
+        help="Probability of a user being sampled into a batch. "
+             "(This is very often batch_size*max_samples_per_user/num_samples)"
+    )
+    parser.add_argument(
+        "-s", "--noise-multiplier", type=float, required=True,
+        help="A parameter which governs how much noise is added."
+    )
+    parser.add_argument(
+        "-i", "--num-compositions", type=int, required=True,
+        help="The number of compositions at which epsilon is computed."
+    )
+    parser.add_argument(
+        "-d", "--delta", type=float, required=True,
+        help="The target delta in the eps-delta DP framework"
+    )
+    parser.add_argument(
+        "-v", "--verbose", action="store_true", default=None,
+        help="Increase verbosity"
+    )
+    return parser
+
+
+def main() -> int:
+    args = arg_parser().parse_args()
+
+    accountants = {}
+
+    accountants["PRV Accountant"] = Accountant(
+        noise_multiplier=args.noise_multiplier,
+        sampling_probability=args.sampling_probability,
+        delta=args.delta,
+        max_compositions=args.num_compositions,
+        verbose=args.verbose,
+        eps_error=0.1
+    )
+    accountants["GDP Accountant"] = other_accountants.GDP(
+        noise_multiplier=args.noise_multiplier,
+        sampling_probability=args.sampling_probability,
+        delta=args.delta
+    )
+    accountants["RDP Accountant"] = other_accountants.RDP(
+        noise_multiplier=args.noise_multiplier,
+        sampling_probability=args.sampling_probability,
+        delta=args.delta
+    )
+ 
+ 
+    for name, accountant in accountants.items():
+        try:
+            eps_lower, eps_est, eps_upper = accountant.compute_epsilon(num_compositions=args.num_compositions)
+            print(f"{name}:\t\teps_lower = {eps_lower:6.3} eps_estimate = {eps_est:6.3}, eps_upper = {eps_upper:6.3} ")
+        except Exception as e:
+            print(f"{name}:\t\tn/a")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

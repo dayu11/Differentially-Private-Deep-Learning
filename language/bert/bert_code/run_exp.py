@@ -1,5 +1,5 @@
 import os
-from privacy_analysis import get_sigma, get_sigma_gd
+from privacy_tools import get_sigma
 import argparse
 
 parser = argparse.ArgumentParser(description='differentially private BERT finetuning')
@@ -28,6 +28,7 @@ parser.add_argument('--delta', default=1e-5, type=float, help='DP parameter delt
 parser.add_argument('--clip', default=10., type=float, help='clipping threshold of individual gradients')
 parser.add_argument('--rank', default=1, type=int, help='reparameterization rank')
 parser.add_argument('--linear_eval', action='store_true', help='use linear evaluation or not')
+parser.add_argument('--accountant', type=str, default='prv', help='which accountant to use')
 
 args = parser.parse_args()
 
@@ -68,7 +69,7 @@ if(dataset_size < 10000):
 if(args.eps > 0):
     q = args.batch_size/dataset_size
     steps = args.epoch * (dataset_size//args.batch_size)
-    sigma, eps, opt_order = get_sigma(q, steps, args.eps, args.delta)
+    sigma, eps = get_sigma(q, steps, args.eps, args.delta, mode=args.accountant)
 
     print('noise std:', sigma, 'eps: ', eps, 'opt_order: ', opt_order)
 else:
