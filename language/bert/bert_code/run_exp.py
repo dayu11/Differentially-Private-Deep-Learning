@@ -71,7 +71,7 @@ if(args.eps > 0):
     steps = args.epoch * (dataset_size//args.batch_size)
     sigma, eps = get_sigma(q, steps, args.eps, args.delta, mode=args.accountant)
 
-    print('noise std:', sigma, 'eps: ', eps, 'opt_order: ', opt_order)
+    print('noise std:', sigma, 'eps: ', eps)
 else:
     sigma = -1
     eps = -1
