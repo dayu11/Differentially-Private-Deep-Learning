@@ -6,7 +6,7 @@ parser = argparse.ArgumentParser(description='differentially private BERT finetu
 
 parser.add_argument('--task', default='SST-2', type=str, help='task name, choices: [MNLI, QNLI, QQP, SST-2]')
 parser.add_argument('--gpu_id', default=0, type=int, help='GPU id')
-parser.add_argument('--ckpt_dir', type=str, default='~/roberta.base/model.pt', help='path to checkpoint')
+parser.add_argument('--ckpt_dir', type=str, default='~/roberta.large/model.pt', help='path to checkpoint')
 parser.add_argument('--output_dir', default='log_dir', type=str, help='output path')
 parser.add_argument('--data_dir', type=str, default='../glue_data', help='data path prefix')
 parser.add_argument('--to_console', action='store_true', help='output to console')
@@ -32,6 +32,7 @@ parser.add_argument('--linear_eval', action='store_true', help='use linear evalu
 args = parser.parse_args()
 
 assert args.task in ['MNLI', 'QNLI', 'QQP', 'SST-2', 'CoLA', 'STS-B', 'MRPC', 'RTE']
+
 
 
 args.data_dir += '/%s-bin'%args.task
@@ -80,9 +81,13 @@ if(args.to_console):
 
 sess = args.sess
 
+arch = 'roberta_base'
+if('large' in args.ckpt_dir):
+    arch = 'roberta_large'
+
 os.system('mkdir -p %s/%s'%(args.output_dir, args.task))
 #--warmup-ratio %f
-cmd = 'CUDA_VISIBLE_DEVICES=%d python train.py %s --fp16  --fp16-init-scale 4 --threshold-loss-scale 1 --fp16-scale-window 128 \
+cmd = 'CUDA_VISIBLE_DEVICES=%d python train.py %s \
         --restore-file %s \
         --max-positions 512 --clip %f --sigma %f \
         --max-sentences %d --update-freq %d \
@@ -91,7 +96,7 @@ cmd = 'CUDA_VISIBLE_DEVICES=%d python train.py %s --fp16  --fp16-init-scale 4 --
         --reset-optimizer --reset-dataloader --reset-meters \
         --required-batch-size-multiple 1 \
         --init-token 0 --separator-token 2 \
-        --arch roberta_base \
+        --arch roberta_large \
         --criterion sentence_prediction %s \
         --num-classes %d \
         --dropout %f --attention-dropout %f \

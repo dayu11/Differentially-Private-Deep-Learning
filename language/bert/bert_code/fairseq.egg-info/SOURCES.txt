@@ -9,6 +9,7 @@ fairseq/file_utils.py
 fairseq/hub_utils.py
 fairseq/iterative_refinement_generator.py
 fairseq/legacy_distributed_data_parallel.py
+fairseq/lrk_utils.py
 fairseq/meters.py
 fairseq/options.py
 fairseq/pdb.py
@@ -19,8 +20,6 @@ fairseq/sequence_generator.py
 fairseq/sequence_scorer.py
 fairseq/tokenizer.py
 fairseq/trainer.py
-fairseq/transformer_sentence_encoder.py
-fairseq/transformer_sentence_encoder_layer.py
 fairseq/utils.py
 fairseq.egg-info/PKG-INFO
 fairseq.egg-info/SOURCES.txt

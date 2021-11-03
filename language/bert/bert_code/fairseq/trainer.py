@@ -372,7 +372,7 @@ class Trainer(object):
                             if(self.lrk_params_flags[i]):
                                 flat_g = p.batch_grad.view(sample_size, -1)
                                 norms += (torch.norm(flat_g, dim=1)).float()**2
-                        norms = torch.sqrt(norms).half()
+                        norms = torch.sqrt(norms)
                         scale = self.args.clip / norms
                         scale[scale>1] = 1
                         for m in self.model.modules():
@@ -444,7 +444,7 @@ class Trainer(object):
                 if(self.lrk_params_flags[i]):
                     p.grad /= batch_size
                     sigma = self.args.sigma * self.args.clip
-                    p.grad += torch.normal(0, sigma/batch_size, size=p.grad.shape).cuda().half()
+                    p.grad += torch.normal(0, sigma/batch_size, size=p.grad.shape).cuda()
                 # We do not use the gradient on full weights
                 else:
                     p.grad = None

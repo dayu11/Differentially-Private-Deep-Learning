@@ -28,7 +28,7 @@ def weight_decomposition(W, rank, iter=1):
     with torch.no_grad():
         outdim, indim = W.shape
 
-        R = torch.normal(0, 1, size = (indim, rank)).cuda().half()
+        R = torch.normal(0, 1, size = (indim, rank)).cuda()
         for _ in range(iter):
             L = torch.matmul(W , R) # outdim x rank
             orthogonalize(L)
@@ -88,7 +88,7 @@ class LrkLinear(nn.Module):
         self.batch_dim = batch_dim
 
         tensor = torch.ones(())
-        self.weight = nn.Parameter(tensor.new_empty(size=(outdim, indim), dtype=torch.half))
+        self.weight = nn.Parameter(tensor.new_empty(size=(outdim, indim), dtype=torch.float))
 
         self.register_forward_hook(linear_forward_hook)
         self.register_backward_hook(linear_backward_hook)    
