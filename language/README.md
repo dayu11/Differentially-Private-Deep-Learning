@@ -57,19 +57,18 @@ I pre-process the GLUE data following the instructions at https://github.com/pyt
 
 Here is an example command to fine-tune the model on SST-2 dataset:
 ```
-python run_exp.py --ckpt_dir path_to_checkpoint --batch_size 2000 --gpu_id 0 --seed 0  --lr 3e-4 --eps 8 --delta 1e-5 --clip 10 --rank 1 --epoch 50 --sess debug_sst2 --to_console
+python run_exp.py --ckpt_dir path_to_checkpoint --batch_size 2000 --gpu_id 0 --seed 0 --accountant prv --lr 3e-4 --eps 8 --delta 1e-5 --clip 1 --rank 1 --epoch 30 --sess debug_sst2 --to_console
 ```
 
 You can also try other tasks such as MNLI, QNLI, and QQP. 
 
 # Results on MNLI, QNLI, QQP, and SST-2
 
-The privacy bound is <img src="https://render.githubusercontent.com/render/math?math=(8 , 1e^{-5})">-differential privacy. We run experiments with both `roberta.base` and `roberta.large` models. For all of the four tasks, the hyperparameters are **the same as** those in the example command.  The results (test accuracy in %) are in the table below.
+The privacy bound is <img src="https://render.githubusercontent.com/render/math?math=(8 , 1e^{-5})">-differential privacy. We run experiments with `roberta.large` models. The batchsizes for MNLI, QQP, QNLI, and SST-2 are 14000, 12000, 4000, 2000, respectively. The learning rate is chosen from \[1e-4, 3e-4\]. Other hyperparameters are the same as those in the example command.  The results (test accuracy in %) are in the table below.
 
 | Model    | 	MNLI | QNLI | QQP | SST-2 |    Average |                                                                                         
 | -----------    |-----------    |  -----------  | ----------- | ----------- |----------- |
-| roberta.base   | 	80.5/79.6	|   87.2  | 85.5 |    91.6  |   84.88 |
-| roberta.large   | 86.1/86.0		|    90.0     |  86.7    | 93.0 |  88.36   |
+| roberta.large   | 87.9		|    91.1     |  88.1    | 94.2 |  90.34   |
 
 
 
