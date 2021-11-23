@@ -1,5 +1,9 @@
 # Differentially-Private-Deep-Learning
 
+## Update 11/18/2021
+
+Update the results of fine-tuning RoBERTa-large with large batchsize and full precision.
+
 ## Update 09/01/2021
 
 Our code for fine-tuning BERT models with differential privacy now supports loading official RoBERTa checkpoints.
