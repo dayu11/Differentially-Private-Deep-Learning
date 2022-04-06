@@ -64,11 +64,11 @@ You can also try other tasks such as MNLI, QNLI, and QQP.
 
 # Results on MNLI, QNLI, QQP, and SST-2
 
-The privacy bound is <img src="https://render.githubusercontent.com/render/math?math=(8 , 1e^{-5})">-differential privacy. We run experiments with `roberta.large` models. The batchsizes for MNLI, QQP, QNLI, and SST-2 are 14000, 12000, 4000, 2000, respectively. The learning rate is chosen from \[1e-4, 3e-4\]. Other hyperparameters are the same as those in the example command.  The results (test accuracy in %) are in the table below.
+The privacy bound is <img src="https://render.githubusercontent.com/render/math?math=(8 , 1e^{-5})">-differential privacy. We run experiments with `roberta.large` models. The batchsizes for MNLI, QQP, QNLI, and SST-2 are 14000, 12000, 4000, 2000, respectively. Experiments are run with full precision. The learning rate is chosen from \[1e-4, 3e-4\]. Other hyperparameters are the same as those in the example command.  The results (test accuracy in %) are in the table below.
 
 | Model    | 	MNLI | QNLI | QQP | SST-2 |    Average |                                                                                         
 | -----------    |-----------    |  -----------  | ----------- | ----------- |----------- |
-| roberta.large   | 87.9		|    91.1     |  88.1    | 94.2 |  90.34   |
+| roberta.large   | 89.0		|    92.4     |  88.4    | 95.3 |  91.3   |
 
 
 
