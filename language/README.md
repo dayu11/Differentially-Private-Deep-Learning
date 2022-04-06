@@ -68,7 +68,7 @@ The privacy bound is <img src="https://render.githubusercontent.com/render/math?
 
 | Model    | 	MNLI | QNLI | QQP | SST-2 |    Average |                                                                                         
 | -----------    |-----------    |  -----------  | ----------- | ----------- |----------- |
-| roberta.large   | 89.0		|    92.4     |  88.4    | 95.3 |  91.3   |
+| roberta.large   | 87.9		|    91.1     |  88.1    | 94.2 |  90.34   |
 
 
 
