@@ -23,7 +23,7 @@ class BasicBlock(nn.Module):
         self.conv1 = conv3x3(inplanes, planes, stride)
         self.gn1 = nn.GroupNorm(gn_groups, planes, affine=False) 
         #self.bn1 = nn.BatchNorm2d(planes, affine=False)
-        self.relu = nn.ReLU(inplace=True)
+        self.relu = nn.ReLU(inplace=False)
         self.conv2 = conv3x3(planes, planes)
         self.gn2 = nn.GroupNorm(gn_groups, planes, affine=False) 
         #self.bn2 = nn.BatchNorm2d(planes, affine=False)
@@ -45,7 +45,7 @@ class BasicBlock(nn.Module):
             identity = self.downsample(x)
             identity = torch.cat((identity, torch.zeros_like(identity)), 1)
 
-        out += identity
+        out = out + identity
         out = self.relu(out)
 
         return out
@@ -60,7 +60,7 @@ class ResNet(nn.Module):
         self.inplanes = 16
         self.conv1 = conv3x3(3, 16)
         self.gn1 = nn.GroupNorm(gn_groups, 16, affine=False) 
-        self.relu = nn.ReLU(inplace=True)
+        self.relu = nn.ReLU(inplace=False)
         self.layer1 = self._make_layer(block, 16, layers[0])
         self.layer2 = self._make_layer(block, 32, layers[1], stride=2)
         self.layer3 = self._make_layer(block, 64, layers[2], stride=2)
